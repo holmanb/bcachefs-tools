@@ -184,6 +184,7 @@ require-kernel-config DETECT_HUNG_TASK
 require-kernel-config WQ_WATCHDOG
 
 require-kernel-config DEBUG_FS
+require-kernel-config BLK_DEV
 require-kernel-config MAGIC_SYSRQ
 require-kernel-config DEBUG_INFO
 require-kernel-config DEBUG_INFO_DWARF4
