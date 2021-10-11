@@ -115,6 +115,9 @@ MOUNT_SRCS=$(shell find mount/src -type f -iname '*.rs') \
 debug: CFLAGS+=-Werror -DCONFIG_BCACHEFS_DEBUG=y -DCONFIG_VALGRIND=y
 debug: bcachefs
 
+debug-no-werror: -DCONFIG_BCACHEFS_DEBUG=y -DCONFIG_VALGRIND=y
+debug-no-werror: bcachefs
+
 libbcachefs_mount.a: $(MOUNT_SRCS)
 	LIBBCACHEFS_INCLUDE=$(CURDIR) cargo build --manifest-path mount/Cargo.toml --release
 	cp mount/target/release/libbcachefs_mount.a $@
