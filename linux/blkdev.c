@@ -350,9 +350,6 @@ static void aio_cleanup(void)
 	if (ret != 1)
 		die("io_submit cleanup err: %s", strerror(-ret));
 
-	ret = kthread_stop(p);
-	BUG_ON(ret);
-
 	put_task_struct(p);
 
 	close(fds[0]);
